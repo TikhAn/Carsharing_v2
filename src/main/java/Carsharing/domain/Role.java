@@ -1,7 +1,14 @@
 package Carsharing.domain;
 
-public enum  Role {
+import org.springframework.security.core.GrantedAuthority;
+
+public enum  Role  implements GrantedAuthority {
     Guest,
     User,
-    Manager
+    Manager;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }
