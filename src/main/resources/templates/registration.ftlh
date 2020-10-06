@@ -2,6 +2,6 @@
 <#import "parts/login.ftlh" as l>
 
 <@c.page>
-    Add new user/ registration new user
+    Add new user / registration new user
     <@l.login "/registration" />
 </@c.page>
