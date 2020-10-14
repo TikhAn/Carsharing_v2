@@ -20,7 +20,7 @@
     </div>
     <div>Filter</div>
     <form method="get" action="/main">
-        <input type="text" name="filter" value="">
+        <input type="text" name="filter" value="${filter?if_exists}">
         <button type="submit">Find</button>
     </form>
     <div>list messages</div>
