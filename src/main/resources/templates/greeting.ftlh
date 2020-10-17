@@ -1,9 +1,9 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<div>Hello, User !</div>
+<H5>Hello, User !</H5>
 <div>Carsharing 4group</div>
 
-    <a href="/main"> - Go to Main Page - </a>
+-Choose your car -
 
 </@c.page>

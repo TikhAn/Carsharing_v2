@@ -1,32 +1,28 @@
-<#-- @ftlvariable name="" type="" -->
+
 <#import "parts/common.ftlh" as c>
-<#import "parts/login.ftlh" as l>
 
 <@c.page>
-    <div>Feed back page</div>
-    <div>
-        <@l.logout/>
-        <span> <a href="/user"> User List </a></span>
-    </div>
-    <div>Feed back messages</div>
-    <div>Your messages</div>
-    <div>
-        <form method="post">
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        add your feedback
+    </a>
+    <div class="collapse" id="collapseExample">
+        <form method="post" enctype="multipart/form-data">
             <input type="text" name="text" placeholder="+message" />
             <input type="text" name="tag" placeholder="Tag"/>
             <input type='hidden' value='${_csrf.token}' name="${_csrf.parameterName}"/>
-            <button type="submit"> +add message</button>
+            <button type="submit"  class="btn btn-primary"> +add message</button>
         </form>
     </div>
     <div>Filter</div>
+<div class="form-row">
     <form method="get" action="/main">
         <input type="text" name="filter" value="${filter?if_exists}">
-        <button type="submit">Find</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form></div>
     <div>list messages</div>
     <#list messages as message>
-        <div>
-            <b>${message.id}</b>
+       <div class="card m-2" style="width: 45rem;">
+
             <span>${message.text}</span>
             <i>${message.tag}</i>
             <strong>${message.authorName}</strong>
@@ -34,5 +30,5 @@
     <#else>
         No message
     </#list>
-
+</div>
 </@c.page>
